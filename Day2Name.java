@@ -5,14 +5,10 @@ public class Day2Name{
 
 	public static void main(String[]args){
 
+		int num = (int)(Math.random()*10000);
 
-		System.out.println("youssef");
-
-
-		System.out.println("purple is for royalty darling, not middle management - myrtle snow, american horror story");
-
-		System.out.println("tanav");
-		System.out.println("merge conflict incoming");
+		System.out.println(num);
+		System.out.println(covertToArrayList(num));
 
 		ArrayList<Integer> test = new ArrayList<>();
 
@@ -23,6 +19,30 @@ public class Day2Name{
 
 		System.out.println(test);
 		System.out.println(reconstruct(test));
+
+	}
+
+	public static ArrayList<Integer> covertToArrayList(int x){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+
+			if(x >= 1000){
+				list.add(x/1000);
+				x = x%1000;
+			}
+			if(x >= 100){
+				list.add(x/100);
+				x = x%100;
+			}
+			if(x >= 10){
+				list.add(x/10);
+				x = x%10;
+			}
+			if(x >= 0)
+				list.add(x);
+
+				return list;
+
+
 
 	}
 
@@ -45,4 +65,6 @@ public class Day2Name{
 
 		return combinary;
 	}
-}
+
+	}
+
